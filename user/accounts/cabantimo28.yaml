@@ -1,0 +1,11 @@
+state: enabled
+email: cabantimo28@gmail.com
+fullname: 'Timo Caban'
+title: Administrator
+access:
+  admin:
+    login: true
+    super: true
+  site:
+    login: true
+hashed_password: $2y$10$pHACM/pj0y2Ga56gUd3yVeT.NH7vqBzdXqMC2gD3vdgxPR2y3UFkO

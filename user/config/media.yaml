@@ -1,0 +1,3 @@
+gpx:
+  type: file
+  mime: application/gpx+xml

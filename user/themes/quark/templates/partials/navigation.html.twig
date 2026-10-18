@@ -1,0 +1,9 @@
+{% import 'macros/macros.html.twig' as macros %}
+
+<ul {{ tree ? 'class="tree"' : '' }}>
+    {{ macros.nav_loop(pages) }}
+</ul>
+
+<div class="lang-wrapper">
+    {% include 'partials/langswitcher.html.twig' %}
+</div>

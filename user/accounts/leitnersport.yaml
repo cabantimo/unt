@@ -1,0 +1,18 @@
+state: enabled
+email: office@leitnersport.sk
+fullname: LeitnerSport
+language: en
+content_editor: default
+twofa_enabled: false
+twofa_secret: MEE7XTASRM6MXN2JFERXL5RLIEFBBRTF
+avatar: {  }
+hashed_password: $2y$12$tvoRPsycMF6Kh4tRu7fGEuxSOqqzqTLxS8oMAqslFHhwyC25uOh4q
+access:
+  site:
+    login: true
+  admin:
+    login: true
+    super: true
+    cache: true
+    configuration: false
+    pages: true

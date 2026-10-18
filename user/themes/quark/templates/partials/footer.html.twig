@@ -1,0 +1,25 @@
+
+{# Nájde stranku určenu na nahrávanie obrazkov#}
+{% set footer_page = page.find('/_footer') %}
+
+<section id="footer" class="section bg-dark text-light">
+    <div class="container grid-lg">
+        
+        <div class="sponzori-grid">
+            {# Ak stránka sa našla tak vezme z nej všetky obrazky #}
+            {% if footer_page %}
+                {% for image in footer_page.media.images %}
+                    <div class="sponzori-logo">
+                        {{ image.html()|raw }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+
+        <div class="copyright-text">
+            {# Vypíšeme text ktory bol nahraty do skrytej stranky #}
+            {{ footer_page.content|raw }}
+        </div>
+
+    </div>
+</section>

@@ -1,0 +1,921 @@
+:root {
+    --accent-color: #ffa1ee;
+    --bg-dark: #222222;
+    --text-white: #ffffff;
+    --recordColor: #ffd700;
+    --blockButtonColor: #904282;
+}
+
+
+/* =========================================
+   ZÁKLADNÉ NASTAVENIE POZADIA A SKROLOVANIA
+   ========================================= */
+
+/* Nastavuje jednotnú tmavú farbu pozadia pre celý obal stránky z vašej premennej */
+#page-wrapper, .body-wrapper {
+    background-color: var(--bg-dark) !important;
+}
+
+/* Zabezpečuje plynulý (animovaný) posun stránky pri kliknutí na kotvy alebo odkazy v menu */
+html {
+    scroll-behavior: smooth;
+}
+
+/* =========================================
+   HERO FOTKA - TEXT FORMÁTOVANIE (DESKTOP)
+   ========================================= */
+
+/* Spoločný tieň textu a výška riadku pre všetky nadpisy a parametre na úvodnej fotke (zlepšuje čitateľnosť na svetlejšom pozadí fotky) */
+
+
+/* Import štýlového "fixkového" písma Permanent Marker z Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+/* ŠTÝL PRE NOVÉ LOGO V HERO SEKCII (vycentrované, nastavená rozumná veľkosť a tieň) */
+.hero-logo {
+    display: block;
+    max-width: 140px;
+    height: auto;
+    
+    /* 1. POSUN VYŠŠIE A MENŠIA MEDZERA POD LOGOM:
+       Prvé číslo (-2.5rem) potiahne logo aj text vyššie, 
+       tretie číslo (0.3rem namiesto pôvodných 1.5rem) zmenší medzeru medzi logom a textom */
+    margin: -6rem auto 1rem auto !important; 
+    
+    /* 2. BIELA ŽIARA (GLOW) NAMIESTO TIEŇA:
+       Kombinácia dvoch bielych tieňov vytvorí intenzívnu žiaru okolo celého loga */
+    filter: drop-shadow(0 0 8px #ffffff) drop-shadow(0 0 20px rgba(255, 255, 255, 0.7)) !important;
+}
+
+
+/* Hlavný veľký nadpis # Skymarathon Chopok (používa font Permanent Marker, veľké písmo 4.5rem) */
+.main-hero h1 {
+    font-family: 'Permanent Marker', cursive !important;
+    font-size: 4.5rem !important;
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: 0 !important;  
+    margin-top: 0 !important;  
+    letter-spacing: 1px;
+    -webkit-text-stroke: 4px #000000;
+    paint-order: stroke fill; 
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.main-hero h3 {
+    margin-bottom: 0 !important;  
+    margin-top: 0 !important;  
+    -webkit-text-stroke: 3px #000000;
+    paint-order: stroke fill; 
+    text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.4);
+
+}
+
+/* Parametre maratónu: 43km/2700m (zvýrazňovacia farba, veľké tučné písmo, záporný horný okraj na prisunutie k nadpisu) */
+.hero-params-skymarathon {
+    color: var(--accent-color);
+    font-size: 3.7rem;
+    font-weight: 550;
+    margin-top: -20px;   
+    margin-bottom: 0px;  
+    text-shadow: 4px 6px 8px rgba(0, 0, 0, 0.4);
+}
+
+
+
+
+
+/* Dátum podujatia ### 5.9.2026 (veľkosť 1.6rem, stredne tučné písmo) */
+
+/* ======================================================
+   RESPONZIVITA PRE MOBILY (Displeje menšie ako 768px)
+   ====================================================== */
+@media (max-width: 768px) {
+    
+    /* Poistka proti nechcenému posúvaniu do strán */
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* 1. Väčšie riadkovanie pre mobil, aby texty neboli na sebe natlačené */
+    .main-hero h1, 
+    .main-hero h2, 
+    .main-hero h3, 
+    .hero-params-skymarathon,
+    .hero-params-skyrace {
+        line-height: 1.25 !important; 
+    }
+
+    /* 2. Logo: Zväčšená medzera pod logom (z 0.3rem na 1.2rem) */
+    .hero-logo {
+        max-width: 90px;
+        margin: -4rem auto 1.2rem auto !important; 
+        filter: drop-shadow(0 0 6px #ffffff) drop-shadow(0 0 14px rgba(255, 255, 255, 0.7)) !important;
+    }
+
+    /* 3. Hlavný nadpis: Mierne zmenšené písmo (1.9rem), aby mal text viac miesta a medzera zospodu */
+    .main-hero h1 {
+        font-size: 1.9rem !important; 
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+
+    /* 4. Parametre maratónu: Zrušený záporný horný okraj + väčšia medzera pred druhou traťou */
+    .hero-params-skymarathon {
+        font-size: 1.7rem !important; 
+        margin-top: 0 !important;   
+        margin-bottom: 10px !important; /* Väčší odstup od Skyrace */
+    }
+
+    /* 5. Skyrace Jasná */
+    .main-hero h2 {
+        font-size: 1.35rem !important; 
+        margin-bottom: 4px !important;
+    }
+
+    /* 6. Parametre kratšej trate + väčšia medzera pred dátumom */
+    .hero-params-skyrace {
+        font-size: 1.15rem !important; 
+        margin-top: 0 !important;
+        margin-bottom: 20px !important; /* Väčší odstup od dátumu */
+    }
+
+    /* 7. Dátum */
+    .main-hero h3 {
+        font-size: 1.25rem !important; 
+        letter-spacing: 1px;
+    }
+}
+/*
+    ==============VIDEO FORMAT=================================
+*/
+
+#start {
+    padding-top: 125px !important; 
+    margin-top: -125px !important; 
+    display: block;
+}
+
+#video {
+    padding: 4rem 1rem;
+    text-align: center;
+    padding-top: 0rem !important;
+    margin-top: -3rem !important;
+}
+
+/* Nadpis videa */
+#video h1 {
+    color: #445771; 
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    padding-top: 0rem !important;
+    margin-top: 0rem !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Responzívny obal na video */
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    max-width: 900px; /* Maximálna šírka videa */
+    margin: 0 auto; /* Vycentrovanie */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2); 
+    border-radius: 4px;
+    overflow: hidden; /* Zabráni presahovaniu rohov obrázka */
+}
+
+/* Video ako take (iframe) */
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Pozadie */
+.bg-gray,
+#video,
+#header {
+    background: var(--bg-dark) !important;
+}
+.section.modular-text {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+    text-align: center !important; 
+}
+
+.section.modular-text h1 {
+    margin-top: 0 !important;
+    text-align: center;        
+    padding-top: 0 !important; 
+}
+
+/* =========================================
+   VLASTNÝ NÁHĽAD (OBRÁZOK + PLAY TLAČIDLO)
+   ========================================= */
+
+/* Obal náhľadu - centruje tlačidlo a prekrýva celý box */
+.video-poster {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10; /* Zabezpečí, že náhľad je nad prípadným prázdnym iframe */
+}
+
+/* Aby img vyplnil celý box a bol pekne orezaný */
+.video-poster img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1; /* Obrázok je na pozadí náhľadu */
+}
+
+/* Štýl YouTube tlačidla */
+.custom-play-btn {
+    width: 68px;
+    height: 48px;
+    background-color: #ff0000;
+    border-radius: 14px;
+    position: relative;
+    z-index: 2; /* Tlačidlo musí byť úplne navrchu, nad obrázkom */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+/* Animácia po prejdení myšou */
+.video-poster:hover .custom-play-btn {
+    background-color: #cc0000;
+    transform: scale(1.1);
+}
+
+/* Biela šípka v tlačidle */
+.custom-play-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    border-style: solid;
+    border-width: 9px 0 9px 18px;
+    border-color: transparent transparent transparent #ffffff;
+}
+
+
+
+/*
+------------------HLAVICKA--------------------
+*/
+
+/* =========================================
+   1. MENU PRI SKROLOVANÍ (Scrolled stav)
+   ========================================= */
+
+/* Farba odkazov a loga (brand) po tom, čo používateľ začne skrolovať stránku dole. 
+   Odkazy sú biele a mierne priehľadné (opacity 0.7), aby nepôsobili rušivo. */
+#header.scrolled .navbar-section a, 
+#header.scrolled .navbar-brand {
+    color: var(--text-white) !important; 
+    opacity: 0.7;
+}
+
+/* Zvýraznenie aktívnej položky (tej, na ktorej stránke sa používateľ práve nachádza) počas skrolovania. 
+   Farba sa zmení na vašu hlavnú zvýrazňovaciu farbu (accent color). */
+#header.scrolled .navbar-section a.active {
+    color: var(--accent-color) !important; 
+}
+
+/* Efekt po prejdení myšou (hover) na odkazy počas skrolovania. 
+   Farba sa zmení na accent color a priehľadnosť sa zruší (opacity 1 - plne viditeľné). */
+#header.scrolled .navbar-section a:hover {
+    color: var(--accent-color) !important;
+    opacity: 1 !important;
+}
+
+/* Všetky (aj neoznačené) položky menu v ZÁKLADNOM (neskrolovanom) stave budú plne viditeľné */
+#header:not(.scrolled) .navbar-section a,
+#header:not(.scrolled) .navbar-section ul.navigation li a {
+    opacity: 1 !important;
+    color: #ffffff !important;   
+}
+
+/* Zvýraznenie aktívnej položky menu v ZÁKLADNOM (neskrolovanom) stave */
+#header .navbar-section ul.navigation li.active > a,
+#header .navbar-section ul.navigation li.selected > a,
+#header:not(.scrolled) .navbar-section a.active {
+    color: var(--accent-color) !important;
+    opacity: 1 !important;
+}
+
+/* Efekt po prejdení myšou (hover) v ZÁKLADNOM (neskrolovanom) stave */
+#header .navbar-section ul.navigation li a:hover,
+#header:not(.scrolled) .navbar-section a:hover {
+    color: var(--accent-color) !important;
+    opacity: 1 !important;
+}
+
+/* =========================================
+   2. PREPÍNAČ JAZYKOV (Vlajočky)
+   ========================================= */
+
+/* Odstránenie predvoleného odsadenia po bokoch odkazov, aby vlajočky nemali zbytočný prázdny priestor okolo seba. */
+.langswitcher a {
+    padding-left: 0 !important;  
+    padding-right: 0 !important; 
+}
+
+/* Hlavný obal pre prepínač jazykov.
+   Ukotvuje vlajky natvrdo (absolute) na pravú stranu obrazovky (1.5rem od okraja) a jemne ich posúva vyššie (-45%), aby boli zarovno s menu. */
+.lang-wrapper {
+    position: absolute !important;
+    right: 1.5rem !important; 
+    transform: translateY(-45%) !important; 
+}
+
+/* Rozloženie samotného zoznamu jazykov. 
+   Používa Flexbox na uloženie vlajok pekne vedľa seba s presnou medzerou (gap) 18px. Tiež maže predvolené odrážky a okraje zoznamu. */
+.langswitcher {
+    display: flex !important;
+    gap: 18px !important; /* Vytvorí čistú medzeru medzi vlajkami */
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Poistka pre odstránenie akýchkoľvek okrajov na jednotlivých položkách zoznamu (li). */
+.langswitcher li { 
+    margin: 0 !important; 
+}
+
+/* Vzhľad samotných obrázkov (vlajok). 
+   Sú nastavené na šírku 28px, sú jemne priehľadné (opacity 0.6) a majú pripravený priesvitný spodný okraj pre aktívny stav. */
+.langswitcher img {
+    width: 28px !important; 
+    height: auto !important;
+    opacity: 0.6 !important; 
+    border-bottom: 2px solid transparent !important; 
+}
+
+/* Efekt po prejdení myšou na vlajku - ikonka sa naplno rozsvieti (opacity 1). */
+.langswitcher a:hover img {
+    opacity: 1 !important; 
+}
+
+/* Zvýraznenie aktívneho jazyka (toho, v ktorom je stránka aktuálne zobrazená). 
+   Vlajka svieti naplno (opacity 1) a objaví sa pod ňou biela čiara (border-bottom). */
+.langswitcher li.active img {
+    opacity: 1 !important; 
+    border-bottom-color: #ffffff !important; 
+}
+
+/* =========================================
+   3. RESPONZIVITA PRE MOBILY
+   ========================================= */
+
+/* Na obrazovkách menších ako 768px (mobily a menšie tablety) sa zruší natvrdo nastavená pozícia vlajok vpravo hore. 
+   Vlajky sa vložia priamo do rozbaľovacieho mobilného menu (hamburger menu) a odsedia sa zľava (margin). */
+   
+@media (max-width: 768px) {
+    .lang-wrapper {
+        position: relative !important;
+        right: auto !important;
+        transform: none !important;
+        margin: 20px 0 10px 25px !important; 
+    }
+}
+
+#header,
+.mobile-container,
+.overlay,
+.mobile-menu {
+    z-index: 9999 !important;
+}
+
+/*
+---------------------PATICKA-------------------------
+*/
+
+/* Globálna pätička - prebitie pôvodného Quark štýlu */
+section#footer {
+    background-color: #050505 !important; 
+    padding: 2rem 0 1rem 0 !important; 
+    border-top: 1px solid #1a1a1a;
+}
+
+/* Flexbox mriežka pre logá */
+#footer .sponzori-grid {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    align-items: center; 
+    gap: 2rem; 
+    margin-bottom: 0; 
+}
+
+/* Veľkosť obrázkov log sponzorov a efekty */
+#footer .sponzori-logo img {
+    max-height: 50px !important; 
+    width: auto !important;
+    opacity: 0.6;
+}
+
+/*COPYRIGHT TEXT */
+#footer .copyright-text {
+    width: 100% !important; 
+    text-align: center !important;
+    color: #666666;
+}
+
+#footer .copyright-text p {
+    width: 100% !important;
+    text-align: center !important; 
+    margin: 0 auto !important;
+    font-size: 0.9rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+/* ----------------------------------------
+    INFO STRANKA 
+---------------------------------------- */
+
+/* NAVIGACNA LISTA ----------------------------------------- */
+.info-sticky-nav {
+    background-color: #000000; 
+    padding: 1.5rem 0; 
+    
+    /* ZMENA: Zapnutie sticky pozície */
+    position: -webkit-sticky !important; /* Podpora pre Safari */
+    position: sticky !important;
+    
+    /* Určuje, kde sa lišta prilepí: */
+    top: 46px !important; 
+
+    margin-top: -3rem !important;
+    border: none; 
+    text-align: center;
+    white-space: nowrap !important; 
+    overflow-x: auto;              
+    z-index: 99 !important; /* Aby bola nad obsahom pod ňou */
+}
+
+.info-sticky-nav .container {
+    max-width: 100% !important;
+}
+
+/* Tlačidlá */
+.info-nav-btn {
+    display: inline-block !important;
+    margin: 0 15px; 
+    background: transparent !important;
+    color: #cccccc !important;
+    border: none !important;
+    font-weight: 400; 
+    font-size: 1.2rem;
+}
+
+/* Hover efekt pri tlacidlach */
+.info-nav-btn:hover {
+    color: var(--text-white) !important;
+}
+
+/* --- ÚVODNÝ TEXT NAD NAVIGÁCIOU --- */
+
+#intro {
+    text-align: center;
+    padding-top: 3rem !important; 
+    padding-bottom: 0rem !important; 
+    background: var(--bg-dark) !important;
+}
+
+#intro p {
+    color: #aaaaaa;
+    font-size: 1.1rem;
+    max-width: 900px;
+    padding-bottom: 0rem !important;
+    margin: 0 auto !important; 
+}
+
+/* Posunutie sticky nav nižšie IBA na telefónoch */
+@media (max-width: 768px) {
+    .info-sticky-nav {
+        /* 1. Počiatočná pozícia (zmenšené z -3rem na 0 alebo -1rem, aby neklesala/nešla privysoko) */
+        margin-top: 0 !important; 
+        /* 2. Bod prilepenia pri skrolovaní (ak je mobilná hlavička vyššia ako 46px, nastavte napr. 55px alebo 60px) */
+        top: 62px !important; 
+
+        /* (Voliteľné) Ak je lišta na mobile privysoká, môžete zmenšiť aj vnútorné polstrovanie: */
+        /*padding: 1rem 0 !important;*/
+    }
+}
+
+
+/* --- VELKY UVODNY OBRAZOK --- */
+
+.info-fullwidth-wrapper {
+    width: 100vw !important;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.fw-img {
+    width: 100%;
+    height: 45vw; 
+    object-fit: cover; 
+    display: block;
+}
+
+
+/* BLOK TEXTU --------------------------------------- */
+
+.info-section {
+    background-color: var(--bg-dark) !important;
+    color: #cccccc !important;
+    
+    /* Zmenšenie medzier */
+    padding-top: 0 !important;  
+    padding-bottom: 0rem !important;
+    
+    /* Odstránenie špár medzi modulmi */
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    border: none !important;
+    scroll-margin-top: 150px !important; 
+}
+
+.float-right {
+    float: right !important;
+    margin: 0 0 25px 50px !important;
+    max-width: 400px !important;
+    height: auto !important;
+}
+
+
+/* =========================================
+   ŠTÝL PRE VÝSLEDKY & REKORDY
+   ========================================= */
+
+/* 1. Prestížny box "Traťový rekord" */
+
+/* Hlavný obal pre celý box "Traťový rekord" (tmavé pozadie, zlatý okraj, tieňovanie a vycentrovanie). */
+.records-card {
+    max-width: 800px;
+    margin: 5rem auto 3.5rem auto; 
+    background: linear-gradient(145deg, #1f2329, #16181c);
+    border: 1px solid color-mix(in srgb, var(--recordColor) 30%, transparent); /* Jemný okraj vo farbe recordColor */
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+/* Obal pre nadpis a ikonku trofeje (pridáva medzeru zospodu). */
+.records-header {
+    margin-bottom: 1.5rem;
+}
+
+/* Ikonka trofeje (nastavuje farbu a veľkosť). */
+.records-header i {
+    font-size: 2.2rem;
+    color: var(--recordColor); /* Trofej */
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+/* Samotný text nadpisu "Traťový rekord" (biela farba, veľkosť, veľké písmená). */
+.records-header h2 {
+    color: #ffffff;
+    font-size: 2rem;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Obal pre jednotlivé kategórie rekordov. (Nastavené na 2 rovnaké stĺpce vedľa seba vďaka "1fr 1fr"). */
+.records-content {
+    display: flex;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr; 
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+/* Kartička pre konkrétny rekord (napr. SkyRace). (Pridáva jemné svetlé pozadie a zaoblené rohy). */
+.record-item {
+    background: rgba(255, 255, 255, 0.04);
+    padding: 1.2rem 2.5rem;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+/* Vypne automatickú modrú notifikačnú guličku zo Spectre.css */
+.record-item .badge::after {
+    display: none !important;
+    content: none !important;
+}
+
+/* Špecifická úprava pre starú trasu (preskočí dole na stred a zúži sa, aby bola menšia). */
+.record-item.old-route {
+    grid-column: 1 / -1; 
+    max-width: 380px; 
+    margin: 0 auto; 
+    padding: 1rem;
+}
+
+/* Zmenší nadpis v boxe starej trate. */
+.record-item.old-route h4 {
+    font-size: 1rem !important; 
+}
+
+/* Zmenší text s časmi v boxe starej trate. */
+.record-item.old-route .record-row {
+    font-size: 0.85rem; 
+}
+
+/* Nadpis kategórie (napr. SkyMarathon) vo vnútri kartičky. */
+.record-item h4 {
+    margin: 0 0 0.8rem 0;
+    color: var(--recordColor);
+    font-size: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* Štítok vedľa nadpisu (napr. "Nová trasa od 2023"). (Pozadie a text v odtieni recordColor). */
+.record-item .badge {
+    font-size: 0.75rem;
+    background: color-mix(in srgb, var(--recordColor) 15%, transparent);
+    color: var(--recordColor);
+    padding: 2px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    width: fit-content;
+}
+
+/* Verzia štítku pre starú trasu (šedé pozadie a text, aby toľko nekričal). */
+.record-item .badge.muted {
+    background: rgba(255, 255, 255, 0.1);
+    color: #aaa;
+}
+
+/* Jeden riadok s výsledkom (napr. pohlavie, meno a čas). */
+.record-row {
+    color: #ddd;
+    font-size: 0.95rem;
+    margin-bottom: 0.4rem;
+}
+
+/* Zvýraznenie mena bežca v riadku (biela farba). */
+.record-row strong {
+    color: #fff;
+}
+
+/* Odznak 500 € */
+/* Boxík s prémiou dole. (white-space: nowrap zabezpečí, že sa text a euro nikdy nezalomia). */
+.records-bonus {
+    background: color-mix(in srgb, var(--recordColor) 10%, transparent);
+    border: 1px dashed var(--recordColor);
+    color: var(--recordColor);
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    display: inline-block;
+    white-space: nowrap; 
+}
+
+/* Zabezpečuje responzivitu na mobiloch (všetko pôjde pod seba a prémia sa zalomí). */
+@media (max-width: 650px) {
+    .records-content {
+        grid-template-columns: 1fr;
+    }
+    .records-bonus {
+        white-space: normal;
+    }
+}
+
+
+/* 3. Karty ročníkov (2025, 2024...) */
+
+/* Hlavný obal pre všetky ročníky (ukladá karty pod seba s medzerou 1.5rem). */
+.results-archive {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Samotná karta pre jeden ročník (tmavé pozadie, orámovanie). */
+.year-result-card {
+    background: #1c1e22;
+    border: 1px solid #2d3139;
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+/* Efekt po prejdení myšou na kartu ročníka (karta mierne poskočí hore a zmení farbu okraja). */
+.year-result-card:hover {
+    border-color: #445771;
+    transform: translateY(-3px);
+}
+
+/* Veľký nadpis roka (napr. 2025) vo vnútri karty (tučné písmo, biela farba). */
+.year-badge {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+/* Obal pre texty s menami víťazov v danom roku (vycentrovanie na stred). */
+.year-details {
+    text-align: center;
+}
+
+/* Odstavec s textom víťazov (nastavuje svetlošedú farbu a medzery). */
+.year-details p {
+    margin: 0.3rem 0;
+    color: #ccc;
+    font-size: 1rem;
+}
+
+/* Zvýraznenie kategórie (napr. SkyMarathon) v texte ročníka. */
+.year-details strong {
+    color: #fff;
+}
+
+/* Tlačidlo pre výsledky */
+/* Vzhľad tlačidla pre výsledkovú listinu (farebný okraj, zruší podčiarknutie a pridá zaoblenie). */
+.btn-results-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--blockButtonColor) !important;
+    border: 1px solid var(--blockButtonColor);
+    padding: 8px 18px;
+    border-radius: 20px;
+    text-decoration: none !important;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+/* Efekt po prejdení myšou na tlačidlo (tlačidlo sa celé vyplní farbou a text stmavne). */
+.btn-results-link:hover {
+    background: var(--blockButtonColor);
+    color: #111 !important;
+}
+
+
+/* ----------------------------- GALERIA --------------------------------------- */
+
+/* Hlavný obal galérie */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 280px)); 
+    justify-content: center; 
+    gap: 2rem; 
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Samotná karta pre jeden ročník (nastavuje tmavé pozadie, zaoblené rohy, základný tieň a skryje všetko, čo by presahovalo okraje). */
+.gallery-card {
+    background: #222; /* Tmavosivé pozadie karty */
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none !important; /* Zruší podčiarknutie textu (keďže je to odkaz) */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Zabezpečí plynulú animáciu pri hover efekte */
+    display: block;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+}
+
+/* Efekt po prejdení myšou na celú kartu (karta poskočí o 8 pixelov hore a jej tieň sa zväčší a stmavne). */
+.gallery-card:hover {
+    transform: translateY(-8px); 
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.95);
+}
+
+/* Kontajner pre náhľadový obrázok (má pevnú výšku 220px, obrázok sa oreže tak, aby vyplnil celý priestor, a pripraví sa na plynulý zoom). */
+.gallery-image {
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease;
+}
+
+/* Efekt po prejdení myšou špeciálne pre obrázok (obrázok vo vnútri karty sa plynulo a jemne priblíži - zoom efekt). */
+.gallery-card:hover .gallery-image {
+    transform: scale(1.05); 
+}
+
+/* Obal pre textovú časť pod obrázkom (pridáva vnútorné odsadenie, aby text nebol nalepený na krajoch, a centruje ho). */
+.gallery-content {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+/* Nadpis s rokom (napr. 2026) vo vnútri karty (tučné, veľké, biele písmo a nastavenie medzier). */
+.gallery-content h3 {
+    margin: 0 0 10px 0;
+    font-size: 2rem;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* Text odkazu na spodku karty (napr. "Galéria s ikonkou"). (Ťahá si vašu hlavnú farbu, mení text na veľké písmená a pridáva rozostup medzi písmenami). */
+.view-gallery {
+    color: var(--blockButtonColor);
+    font-weight: bold;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+/* POISTKA PROTI KLIKNUTIU: Zabezpečí, že pri kliknutí (:active) ani po kliknutí (:focus) tieň NEZMIZNE */
+.gallery-card:focus,
+.gallery-card:active {
+    outline: none !important; /* Zruší modrý/čierny obrys prehliadača */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6) !important; /* Zachová základný tieň */
+}
+
+
+/* ----------------------------- KONTAKT --------------------------------------- */
+
+.text-center h1 {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+.contact-details {
+    padding-top: 4rem !important; 
+    padding-left: 2rem;
+}
+
+.contact-details p {
+    font-size: 1.1rem !important; 
+    line-height: 1.6; 
+    margin-bottom: 1rem !important; 
+}
+
+.contact-details i {
+    font-size: 1.1rem !important; 
+    width: 25px !important; 
+}
+
+
+/* Štýl pre profilovú fotku */
+.profile-img {
+    border-radius: 4px;
+    margin-bottom: 0rem;
+    max-width: 350px;
+    width: 100%;
+}
+
+.image-desc {
+    padding-top: 0rem !important;
+    margin-top: -0.7rem !important;
+}
+
+@media (max-width: 840px) {
+    .contact-details {
+        padding-left: 0;
+        text-align: center;
+    }
+    .contact-details p {
+        justify-content: center;
+    }
+}
+
+
+#galeria {
+    padding-top: 0rem !important;    
+    padding-bottom: 5rem !important; 
+    
+    text-align: center !important; 
+}

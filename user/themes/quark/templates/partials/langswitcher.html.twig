@@ -1,0 +1,18 @@
+<ul class="langswitcher">
+{% for language in langswitcher.languages %}
+    
+    {% if language == langswitcher.current %}
+        {% set lang_url = page.url %}
+    {% else %}
+        {% set lang_prefix = grav.language.getLanguageURLPrefix(language) %}
+        {% set lang_route = langswitcher.page_route|default(page.route) %}
+        {% set lang_url = base_url_simple ~ lang_prefix ~ lang_route %}
+    {% endif %}
+    
+    <li class="nav-item {{ language == langswitcher.current ? 'active' : '' }}">
+        <a href="{{ lang_url }}" class="nav-link">
+            <img src="{{ url('theme://images/' ~ language ~ '.svg') }}" alt="{{ language }}" style="width: 24px; height: auto; vertical-align: middle;">
+        </a>
+    </li>
+{% endfor %}
+</ul>

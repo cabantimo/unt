@@ -1,0 +1,32 @@
+enabled: true
+folders:
+  - pages
+sync:
+  direction: both
+  on_save: true
+  on_delete: true
+  on_media: true
+  cron_enable: false
+  cron_at: '0 12,23 * * *'
+SyncNotice: null
+local_repository: null
+repository: 'https://github.com/cabantimo/chopokskymarathon'
+no_user: '0'
+user: cabantimo
+password: null
+webhook: /_git-sync-96352524625a
+webhook_enabled: '0'
+webhook_secret: 2d254d9815d4d595ab36a2fed89627ece311ae3eb8cceb5c
+branch: main
+remote:
+  name: origin
+  branch: main
+git:
+  author: gituser
+  message: '(Grav GitSync) Automatic Commit'
+  name: GitSync
+  email: git-sync@trilby.media
+  bin: git
+  ignore: null
+  private_key: null
+logging: true

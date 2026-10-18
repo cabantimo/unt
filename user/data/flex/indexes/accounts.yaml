@@ -1,0 +1,14 @@
+version: '1.2'
+timestamp: 1791807660
+count: 2
+index:
+  cabantimo28:
+    storage_key: cabantimo28
+    storage_timestamp: 1785429120
+    key: cabantimo28
+    email: cabantimo28@gmail.com
+  leitnersport:
+    storage_key: leitnersport
+    storage_timestamp: 1786018920
+    key: leitnersport
+    email: office@leitnersport.sk

@@ -1,0 +1,9 @@
+<div class="info-sticky-nav">
+    <div class="container grid-lg text-center">
+        {% for module in page.parent.collection() %}
+            {% if module.template == 'modular/infosection' %}
+                <a href="#{{ module.slug }}" class="btn info-nav-btn">{{ module.title }}</a>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>

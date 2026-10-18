@@ -1,0 +1,8 @@
+{# ID sekcie sa automaticky vygeneruje z názvu (slug) modulu #}
+<section id="{{ page.slug }}" class="section info-section">
+    <div class="container grid-lg">
+        <div class="info-section-content">
+            {{ content|raw }}
+        </div>
+    </div>
+</section>

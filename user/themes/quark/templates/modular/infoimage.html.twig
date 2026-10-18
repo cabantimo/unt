@@ -1,0 +1,7 @@
+{% set image = page.media.images|first %}
+
+{% if image %}
+<section id="{{ page.slug }}" class="info-fullwidth-wrapper">
+    <img src="{{ image.url }}" alt="{{ page.title }}" class="fw-img">
+</section>
+{% endif %}
