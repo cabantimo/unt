@@ -6,7 +6,10 @@ Vsetky subory ktore chcem vidiet su v zlozke user
 
 Na ulozenie zmeny na hlavnej stranke treba git push a pockat 30s
 
-
+SYNC s FTP je robeny tak, že FTP je na leitnersport.sk
+SYNC cez push je robeny pomocou git actions a popisany v .github/workflows/deploy.yml
+SYNC do lokal je cez SFTP je vzdy na zaciatku kazdej roboty treba dat FTP pull remote - local
+Presmerovanie z hlavnej domeny (napr skymarathon.sk na chopok.leitnersport.sk) je robene cez cloudflare workers
 
 
 
